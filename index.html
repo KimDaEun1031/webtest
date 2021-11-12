@@ -23,15 +23,16 @@
     </div>
 
     <script>
-        const content = "Hello, I'm Daeun.";
+        const content = "Hello, I'm Daeun. \n This Web is Wedding Gallery";
         const text = document.querySelector(".text");
         let i = 0;
 
         function typing() {
-            if (i < content.length) {
-                let txt = content.charAt(i);
-                text.innerHTML += txt;
-                i++;
+            let txt = content[i++];
+            text.innerHTML += txt === "\n" ? "<br/>" : txt;
+            if (i < content.length) {              
+                text.textContent = "";
+                i = 0;
             }
         }
 
