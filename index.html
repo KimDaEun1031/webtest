@@ -6,13 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>갤러리</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
+<style>
+    div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    font-size: 2rem;
+}
+</style>
 <body>
     <div class="text_box" data-trigger>
         <span class="text"></span>
     </div>
 
-    <script type="text/javascript" src="/typing_anim.js"></script>
+    <script>
+        const content = "Hello, I'm Daeun.";
+        const text = document.querySelector(".text");
+        let i = 0;
+
+        function typing() {
+            if (i < content.length) {
+                let txt = content.charAt(i);
+                text.innerHTML += txt;
+                i++;
+            }
+        }
+
+        setInterval(typing, 200);
+    </script>
+    <!-- <script type="text/javascript" src="/typing_anim.js"></script> -->
 </body>
 </html>
