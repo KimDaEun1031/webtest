@@ -5,8 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>갤러리</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h3>결혼기념일 갤러리 테스트 화면입니다.</h3>
+    <h3 class="text">결혼기념일 갤러리 테스트 화면입니다.</h3>
+
+    <script>
+        $(".text").slideUp(2000, "linear", function(){
+            alert("hello");
+        });
+    </script>
 </body>
 </html>
