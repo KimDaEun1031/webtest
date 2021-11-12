@@ -9,28 +9,36 @@
     <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
 <style>
-    div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    font-size: 2rem;
-}
+   .text_box{
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .blink {
+        animation: blink 0.5s infinite;
+        font-size: 2.5rem;
+    }
+
+    @keyframes blink {
+        to {
+            opacity: 0;
+        }
+    }
 </style>
 <body>
     <div class="text_box" data-trigger>
-        <span class="text"></span>
+        <span class="text"></span><span class="blink">|</span>
     </div>
 
     <script>
-        const content = "Hello, I'm Daeun. \n This Web is Wedding Gallery";
+        const content = "Hello, I'm Daeun. \n This Web is Wedding Gallery.";
         const text = document.querySelector(".text");
         let i = 0;
 
         function typing() {
             let txt = content[i++];
             text.innerHTML += txt === "\n" ? "<br/>" : txt;
-            if (i < content.length) {              
+            if (i > content.length) {              
                 text.textContent = "";
                 i = 0;
             }
